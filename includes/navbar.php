@@ -17,7 +17,7 @@
                     Hilfe & Prompt
                 </a>
 
-                <a href="/?page=quiz" class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">
+                <a href="/?page=create" class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">
                     Quiz importieren
                 </a>
             </div>
@@ -42,7 +42,7 @@
                     Hilfe & Prompt
                 </a>
 
-                <a href="/?page=quiz" class="mt-2 rounded-lg bg-blue-600 px-4 py-2 text-center font-medium text-white hover:bg-blue-700">
+                <a href="/?page=create" class="mt-2 rounded-lg bg-blue-600 px-4 py-2 text-center font-medium text-white hover:bg-blue-700">
                     Quiz importieren
                 </a>
             </div>

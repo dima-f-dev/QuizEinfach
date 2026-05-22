@@ -6,7 +6,7 @@ require 'config/db.php';
 
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
-$allowed_pages = ['home','quiz','faq','impressum','datenschutz','kontakt','quiz1']; 
+$allowed_pages = ['home','quiz','create','faq','impressum','datenschutz','kontakt']; 
 
 
 if (!in_array($page, $allowed_pages)) {
