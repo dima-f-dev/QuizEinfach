@@ -1,0 +1,2 @@
+<h1 class="text-2xl font-bold text-slate-900 mb-4">KI-Prompt zur Datengenerierung </h1>
+<p class="text-slate-600 leading-relaxed">Zur Generierung neuer Fragenfolgen kann folgender Prompt in ein KI-Modell (z. B. ChatGPT) kopiert werden. </p>
