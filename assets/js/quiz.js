@@ -14,35 +14,44 @@ const parsedObject = parsedObject2.find(quiz => quiz.quizId === quizId);
 const titleElement = document.getElementById("quiz-title");
 titleElement.textContent = parsedObject.quizTitle;
 
+let currentIndex = 0; 
+let userAnswers = {}; // Antworten-Array
+let result = ""; // Ergebnis
+
 const container = document.getElementById("question-container");
 
-parsedObject.questions.forEach((q, index) => {
+renderQuestion(currentIndex);
+
+function renderQuestion(index) {
+  container.innerHTML = ""; 
+
+  const q = parsedObject.questions[index];
+
   const questionBlock = document.createElement("div");
   questionBlock.classList.add("question");
 
   const correctAnswersQ = q.correctAnswers.length;
 
-
-
-  // Fragen
+  // Frage
   const questionTitle = document.createElement("h3");
   questionTitle.textContent = q.question;
   questionTitle.className = "text-xl font-semibold text-slate-800 mb-4";
   questionBlock.appendChild(questionTitle);
 
-  // erforderlich
+  // Info
   const questionErford = document.createElement("div");
-  questionErford.textContent = correctAnswersQ > 1 ? "👉 "+correctAnswersQ+" Antworten erforderlich" : "👉 1 Antwort erforderlich";
-  questionErford.className = "text-sm font-medium text-indigo-500 mb-4";
+  questionErford.textContent = correctAnswersQ > 1 ? "Es sind " + correctAnswersQ + " Antworten richtig." : "Es ist 1 Antwort richtig.";
+
+  questionErford.className = "text-sm font-medium text-slate-500 mb-4";
   questionBlock.appendChild(questionErford);
 
   // Antworten
-    const answersList = document.createElement("div");
-    answersList.className = "answers mb-4";
+  const answersList = document.createElement("div");
+  answersList.className = "answers mb-4";
 
-    q.answers.forEach((answer, i) => {
+  q.answers.forEach((answer, i) => {
     const label = document.createElement("label");
-    label.className = "flex items-center gap-3 p-4 border rounded-lg cursor-pointer hover:bg-gray-100 has-[:checked]:bg-blue-100 has-[:checked]:border-blue-500 mb-2";
+    label.className = "flex items-center gap-3 p-4 border border-slate-500 rounded-lg cursor-pointer hover:bg-gray-100 has-[:checked]:bg-blue-100 has-[:checked]:border-blue-500 mb-2";
 
     const input = document.createElement("input");
     input.type = correctAnswersQ > 1 ? "checkbox" : "radio";
@@ -55,53 +64,37 @@ parsedObject.questions.forEach((q, index) => {
 
     label.append(input, span);
     answersList.appendChild(label);
-    });
+  });
 
   questionBlock.appendChild(answersList);
-  container.appendChild(questionBlock);
-});
 
+  // Weiter
+  const nextBtn = document.createElement("button");
+  nextBtn.textContent = index === parsedObject.questions.length - 1 ? "Fertig" : "Weiter";
 
-//Result
-function result() {
+  nextBtn.className = "bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors cursor-pointer w-full md:w-auto";
 
-    let richtigeAntworten = 0;
+  nextBtn.addEventListener("click", () => {
+    if (currentIndex < parsedObject.questions.length - 1) {
 
-    for (let i = 0; i < parsedObject.questions.length; i++) {
+        currentAnswers = parsedObject.questions[currentIndex].correctAnswers;
+        console.log( "Korrekte Antworten = " + currentAnswers);
 
-        let frage = parsedObject.questions[i];
+        userAnswers = Array.from(document.querySelectorAll('input:checked')).map(input => Number(input.value));
+        console.log( "Benutzerantworten = " + userAnswers);
 
-        let checked = document.querySelectorAll(
-            'input[name="' + frage.id + '"]:checked'
-        );
+        if (JSON.stringify(currentAnswers.sort()) === JSON.stringify(userAnswers.sort())) {
+            alert("Richtig");
+        } else { alert("Falsch, probiere noch mal"); return;}
 
-        let richtig = true;
-
-        if (checked.length != frage.correctAnswers.length) {
-            richtig = false;
-        }
-
-        for (let j = 0; j < checked.length; j++) {
-
-            let gefunden = false;
-
-            for (let k = 0; k < frage.correctAnswers.length; k++) {
-
-                if (Number(checked[j].value) == frage.correctAnswers[k]) {
-                    gefunden = true;
-                }
-            }
-
-            if (gefunden == false) {
-                richtig = false;
-            }
-        }
-
-        if (richtig) {
-            richtigeAntworten++;
-        }
+      currentIndex++;
+      renderQuestion(currentIndex);
+    } else {
+      container.innerHTML = "<p class='text-green-600 font-semibold'>Quiz beendet</p>";
     }
+  });
 
-    alert("Ergebnis: " + richtigeAntworten + " von " + parsedObject.questions.length + " richtig!");
+  questionBlock.appendChild(nextBtn);
+
+  container.appendChild(questionBlock);
 }
-

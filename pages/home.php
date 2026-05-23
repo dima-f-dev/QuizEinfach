@@ -7,5 +7,6 @@
     Mehr Infos findest du im Bereich <strong>Hilfe & Prompt</strong>.
 </p>
 <p class="text-red-600 leading-relaxed text-red-100">
-Diese Website befindet sich derzeit in der Entwicklung.
+Diese Website befindet sich derzeit in der Entwicklung. 
 </p>
+

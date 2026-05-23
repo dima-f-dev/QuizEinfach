@@ -4,7 +4,7 @@
 
             <!-- Logo -->
             <span  class="text-xl font-bold text-gray-900">
-                <span class="text-2xl">💡</span> QuizEinfach
+                <span class="text-2xl">💡</span> QuizEinfach 
             </span>
 
             <!-- Desktop Navigation -->
