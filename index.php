@@ -23,6 +23,7 @@ if (!in_array($page, $allowed_pages)) {
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, viewport-fit=cover">
     <title>Quiz</title>
     <link rel="stylesheet" href="/assets/css/output.css">
+    <meta name="robots" content="noindex">
 </head>
 <body class="bg-slate-100">
     <header >

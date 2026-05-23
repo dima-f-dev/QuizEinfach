@@ -52,3 +52,16 @@ document.addEventListener("DOMContentLoaded",() => {
 
   }
 });
+
+
+// Inhalt löschen
+function clearTextarea() {
+    document.getElementById('json-input').value = '';
+}
+
+// Löscht alle Einträge im LocalStorage
+function clearAllData() {
+  localStorage.clear();
+  alert("Der gesamte LocalStorage wurde geleert.");
+  window.location.reload();
+}

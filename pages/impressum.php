@@ -1,2 +1,23 @@
 <h1 class="text-2xl font-bold text-slate-900 mb-4">Impressum</h1>
-<p class="text-slate-600 leading-relaxed">Diese Seite befindet sich derzeit im Aufbau.</p>
+<p class="text-slate-600 leading-relaxed">
+    
+Angaben gemäß § 5 DDG </br>
+</br>
+Max Mustermann</br>
+Musterstraße 1</br>
+12345 Musterstadt</br>
+Deutschland</br>
+</br>
+Kontakt</br>
+</br>
+E-Mail: kontakt@example.de</br>
+</br>
+Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</br>
+</br>
+Max Mustermann</br>
+Anschrift wie oben</br>
+</br>
+Bei Hinweisen auf rechtswidrige Inhalte kontaktieren Sie bitte:</br>
+E-Mail: kontakt@example.de</br>
+
+</p>

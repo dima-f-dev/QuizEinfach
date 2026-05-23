@@ -9,15 +9,15 @@
 
             <!-- Desktop Navigation -->
             <div class="hidden items-center gap-6 md:flex">
-                <a href="/?page=home" class="text-gray-600 hover:text-gray-900">
+                <a href="/home" class="text-gray-600 hover:text-gray-900">
                     Startseite
                 </a>
 
-                <a href="/?page=faq" class="text-gray-600 hover:text-gray-900">
+                <a href="/faq" class="text-gray-600 hover:text-gray-900">
                     Hilfe & Prompt
                 </a>
 
-                <a href="/?page=create" class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">
+                <a href="/create" class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">
                     Quiz importieren
                 </a>
             </div>
@@ -34,15 +34,15 @@
         <!-- Mobile Navigation -->
         <div id="mobileMenu" class="hidden pb-4 md:hidden">
             <div class="flex flex-col gap-2">
-                <a href="/?page=home" class="rounded px-3 py-2 hover:bg-gray-100">
+                <a href="/home" class="rounded px-3 py-2 hover:bg-gray-100">
                     Startseite
                 </a>
 
-                <a href="/?page=faq" class="text-gray-600 hover:text-gray-900">
+                <a href="/faq" class="text-gray-600 hover:text-gray-900">
                     Hilfe & Prompt
                 </a>
 
-                <a href="/?page=create" class="mt-2 rounded-lg bg-blue-600 px-4 py-2 text-center font-medium text-white hover:bg-blue-700">
+                <a href="/create" class="mt-2 rounded-lg bg-blue-600 px-4 py-2 text-center font-medium text-white hover:bg-blue-700">
                     Quiz importieren
                 </a>
             </div>

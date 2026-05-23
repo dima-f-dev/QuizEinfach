@@ -104,3 +104,4 @@ function result() {
 
     alert("Ergebnis: " + richtigeAntworten + " von " + parsedObject.questions.length + " richtig!");
 }
+
