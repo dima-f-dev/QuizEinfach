@@ -4,7 +4,7 @@
 
             <!-- Logo -->
             <span  class="text-xl font-bold text-gray-900">
-                <span class="text-2xl">💡</span> QuizEinfach 
+                <span class="text-2xl">💡</span><span class="text-emerald-700"> Quiz</span><span class="text-amber-800">Einfach</span> 
             </span>
 
             <!-- Desktop Navigation -->
@@ -16,10 +16,12 @@
                 <a href="/faq" class="text-gray-600 hover:text-gray-900">
                     Hilfe & Prompt
                 </a>
-
-                <a href="/create" class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">
+            <span class="relative inline-flex">
+                <a href="/create" class="rounded-lg border border-emerald-600 px-4 py-2 text-sm font-medium text-emerald-600 hover:border-emerald-700">
                     Quiz importieren
                 </a>
+                <span class="absolute top-0 right-0 -mt-1 -mr-1 flex size-3"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex size-3 rounded-full bg-emerald-500"></span></span>
+            </span>
             </div>
 
             <!-- Mobile Menu Button -->

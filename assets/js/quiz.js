@@ -51,7 +51,7 @@ function renderQuestion(index) {
 
   q.answers.forEach((answer, i) => {
     const label = document.createElement("label");
-    label.className = "flex items-center gap-3 p-4 border border-slate-500 rounded-lg cursor-pointer hover:bg-gray-100 has-[:checked]:bg-blue-100 has-[:checked]:border-blue-500 mb-2";
+    label.className = "flex items-center gap-3 p-4 border border-slate-500 rounded-lg cursor-pointer hover:bg-gray-100 has-[:checked]:bg-amber-100 has-[:checked]:border-amber-500 mb-2";
 
     const input = document.createElement("input");
     input.type = correctAnswersQ > 1 ? "checkbox" : "radio";
@@ -72,7 +72,7 @@ function renderQuestion(index) {
   const nextBtn = document.createElement("button");
   nextBtn.textContent = index === parsedObject.questions.length - 1 ? "Fertig" : "Weiter";
 
-  nextBtn.className = "bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors cursor-pointer w-full md:w-auto";
+  nextBtn.className = "bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors cursor-pointer w-full w-auto";
 
   nextBtn.addEventListener("click", () => {
     if (currentIndex < parsedObject.questions.length - 1) {
@@ -84,13 +84,19 @@ function renderQuestion(index) {
         console.log( "Benutzerantworten = " + userAnswers);
 
         if (JSON.stringify(currentAnswers.sort()) === JSON.stringify(userAnswers.sort())) {
-            alert("Richtig");
-        } else { alert("Falsch, probiere noch mal"); return;}
+            message.classList.add("hidden");
+        } 
+            else { 
+            const message = document.getElementById("message");
+            message.textContent = "Das war leider nicht richtig, aber versuch es nochmal 🙂.";
+            message.classList.remove("hidden");
+            return;
+            }
 
       currentIndex++;
       renderQuestion(currentIndex);
     } else {
-      container.innerHTML = "<p class='text-green-600 font-semibold'>Quiz beendet</p>";
+      container.innerHTML = "<div class='text-7xl animate-bounce'>🏆</div> <p class='text-slate-500 font-semibold'>Klasse! Quiz abgeschlossen</p>";
     }
   });
 

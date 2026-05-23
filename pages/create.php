@@ -1,5 +1,5 @@
 <h1 class="text-2xl font-bold text-slate-900 mb-4">Quiz importieren</h1>
-<p class="text-slate-600 leading-relaxed">JSON-Code im vorgesehenen Format einfügen. Informationen zum Prompt findet ihr <a href="/faq" class="text-blue-600 underline hover:no-underline cursor-pointer font-semibold">hier</a>, oder ihr könnt den Test-JSON importieren.</p>
+<p class="text-slate-600 leading-relaxed">JSON-Code im vorgesehenen Format einfügen. Informationen zum Prompt findet ihr <a href="/faq" class="text-emerald-600 underline hover:no-underline cursor-pointer font-semibold">hier</a>, oder ihr könnt den Test-JSON importieren.</p>
 
 <div class="space-y-4 mt-4">
          <textarea id="json-input" rows="8" placeholder="JSON hier einfügen..." class="w-full px-3 py-2 border border-slate-300 rounded-lg font-mono text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 bg-white">
@@ -81,8 +81,10 @@
             Importieren
         </button>
 
-        <button type="button" onclick="clearTextarea()" class="text-red-600 underline hover:text-red-700 cursor-pointer">
+        <button type="button" onclick="clearTextarea()" class="text-amber-600 underline hover:text-amber-700 cursor-pointer">
             Inhalt löschen
         </button>
     </div>
 </div>
+
+
