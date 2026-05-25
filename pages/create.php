@@ -1,12 +1,53 @@
-<h1 class="text-2xl font-bold text-slate-900 mb-4">Quiz importieren</h1>
+<h1 class="text-2xl font-bold text-slate-900 mb-4">Neues Quiz erstellen</h1>
+<!--
+<p class="text-slate-600 leading-relaxed">
+    <ol class="list-inside list-decimal ">
+        <li class="m-4">Fülle die Felder aus, um einen perfekten Prompt für die KI zu erstellen.</li>
+        <li class="m-4">Sende den generierten Prompt an eine KI deiner Wahl.</li>
+        <li class="m-4">Füge die JSON-Antwort der KI auf dieser Seite ein.</li>
+        <li class="m-4">Teste dein Wissen!</li>
+    </ol>
+</p>
+
+ <h2 class="text-2xl font-bold text-slate-900">KI-Prompt-Generator</h2>
+-->
+
 <p class="text-slate-600 leading-relaxed">JSON-Code im vorgesehenen Format einfügen. Informationen zum Prompt findet ihr <a href="/faq" class="text-emerald-600 underline hover:no-underline cursor-pointer font-semibold">hier</a>, oder ihr könnt den Test-JSON importieren.</p>
 
 <div class="space-y-4 mt-4">
          <textarea id="json-input" rows="8" placeholder="JSON hier einfügen..." class="w-full px-3 py-2 border border-slate-300 rounded-lg font-mono text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 bg-white">
-            {
+           {
     "quizId": "bonn-quiz-01",
     "quizTitle": "Test Quiz",
     "questions": [
+        {
+            "id": "q0",
+            "question": "Welche Aussagen über Bonn sind richtig?",
+            "answers": [
+                "Bonn liegt am Rhein",
+                "Bonn ist die Hauptstadt von Bayern",
+                "Bonn war die Hauptstadt der Bundesrepublik Deutschland",
+                "Bonn liegt in Sachsen"
+            ],
+            "correctAnswers": [
+                0,
+                2
+            ]
+        },
+        {
+            "id": "q00",
+            "question": "Welche Einrichtungen haben ihren Sitz in Bonn?",
+            "answers": [
+                "Deutsche Welle",
+                "Bundesverfassungsgericht",
+                "Vereinte Nationen (UN-Einrichtungen)",
+                "Europäische Zentralbank"
+            ],
+            "correctAnswers": [
+                0,
+                2
+            ]
+        },
         {
             "id": "q1",
             "question": "Welche Stadt war die Hauptstadt der Bundesrepublik Deutschland von 1949 bis 1990?",
@@ -86,5 +127,3 @@
         </button>
     </div>
 </div>
-
-

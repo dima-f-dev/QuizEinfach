@@ -12,7 +12,7 @@ const parsedObject = parsedObject2.find(quiz => quiz.quizId === quizId);
 
 // Quiz
 const titleElement = document.getElementById("quiz-title");
-titleElement.textContent = parsedObject.quizTitle;
+titleElement.textContent = "Thema: "+parsedObject.quizTitle;
 
 let currentIndex = 0; 
 let userAnswers = {}; // Antworten-Array
@@ -35,7 +35,7 @@ function renderQuestion(index) {
   // Frage
   const questionTitle = document.createElement("h3");
   questionTitle.textContent = q.question;
-  questionTitle.className = "text-xl font-semibold text-slate-800 mb-4";
+  questionTitle.className = "text-xl font-semibold text-amber-800 mb-4";
   questionBlock.appendChild(questionTitle);
 
   // Info
