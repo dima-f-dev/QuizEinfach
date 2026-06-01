@@ -1,5 +1,5 @@
-<h1 class="text-2xl font-bold text-slate-900 mb-4">KI-Prompt zur Datengenerierung </h1>
-<p class="text-slate-600 leading-relaxed mb-4">Zur Generierung neuer Fragenfolgen kann folgender Prompt in ein KI-Modell (z. B. ChatGPT) kopiert werden. 
+<h1>KI-Prompt zur Datengenerierung </h1>
+<p class="text-slate-600">Zur Generierung neuer Fragenfolgen kann folgender Prompt in ein KI-Modell (z. B. ChatGPT) kopiert werden. 
 
 <div class="bg-slate-100 p-4 rounded-lg font-mono text-xs text-slate-700 leading-relaxed border border-slate-200 select-all mb-4">
                                 Erstelle ein Multiple-Choice-Quiz zum Thema [THEMA EINFÜGEN].<br><br>
@@ -29,7 +29,7 @@
         Probleme beim Importieren?
     </h2>
 
-    <p class="text-slate-600 leading-relaxed mb-4">
+    <p class="text-slate-600">
         Falls Probleme auftreten oder gespeicherte Quizze nicht korrekt angezeigt werden,
         könnt ihr alle lokal gespeicherten Quizze löschen und es anschließend erneut versuchen.
     </p>

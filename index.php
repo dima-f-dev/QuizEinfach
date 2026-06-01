@@ -36,14 +36,14 @@ $currentPage = $seo_data[$page];
     <link rel="icon" href="favicon.ico" >
 
     <!-- SEO-Block -->
-    <meta name="description" content="<?= $currentPage['description'] ?>">
-    <meta name="keywords" content="<?= $currentPage['keywords'] ?>">
+    <meta name="description" content="<?= htmlspecialchars($currentPage['description']) ?>">
+    <meta name="keywords" content="<?= htmlspecialchars($currentPage['keywords']) ?>">
     <meta name="robots" content="index, follow, noodp">
     <meta property="og:locale" content="de_DE">
     <meta property="og:type" content="website">
     <meta property="og:title" content="<?= htmlspecialchars($currentPage['title']) ?>">
-    <meta property="og:description" content="<?= $currentPage['description'] ?>">
-
+    <meta property="og:description" content="<?= htmlspecialchars($currentPage['description']) ?>">
+    <meta property="og:image" content="/assets/img/quizeinfach.jpg">
 </head>
 <body class="bg-slate-100">
     <header >
@@ -57,14 +57,14 @@ $currentPage = $seo_data[$page];
             <?php include 'includes/l_sidebar.php'; ?>
         </aside>
 
-        <main class="order-1 md:order-none w-full bg-white border border-slate-200/80 rounded-xl p-6 md:col-span-3 lg:col-span-6 shadow-sm">
+        <main class="order-1 md:order-none w-full bg-white border border-slate-200/80 rounded-xl p-6 md:col-span-3 lg:col-span-9 shadow-sm">
             <?php include "pages/{$page}.php"; ?>
         </main>
-
+        <!--
         <aside class="order-3 md:order-none w-full bg-slate-50 border border-slate-200/60 rounded-xl p-4 md:col-span-4 lg:col-span-3">
             <?php include 'includes/r_sidebar.php'; ?>
         </aside>
-
+        -->
     </div>
     
 

@@ -1,5 +1,5 @@
-<h1 class="text-2xl font-bold text-slate-900 mb-4">Datenschutzerklärung</h1>
-<p class="text-slate-600 leading-relaxed">
+<h1>Datenschutzerklärung</h1>
+<p class="text-slate-600">
 
  <section class="mb-8">
             <h2 class="mb-3 text-2xl font-semibold">

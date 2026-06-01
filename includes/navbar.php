@@ -4,7 +4,7 @@
 
             <!-- Logo -->
             <span  class="text-xl font-bold text-gray-900">
-                <span class="text-2xl">💡</span><span class="text-emerald-700"> Quiz</span><span class="text-amber-800">Einfach</span> 
+                <a href="/" class="cursor-pointer"><span class="text-2xl">💡</span><span class="text-emerald-700"> Quiz</span><span class="text-amber-800">Einfach</span></a>
             </span>
 
             <!-- Desktop Navigation -->
@@ -25,7 +25,7 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="menuButton" class="rounded-md p-2 text-gray-700 md:hidden" type="button" >
+            <button id="menuButton" class="rounded-md p-2 text-gray-700 md:hidden cursor-pointer" type="button" >
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -40,7 +40,7 @@
                     Startseite
                 </a>
 
-                <a href="/faq" class="text-gray-600 hover:text-gray-900">
+                <a href="/faq" class="rounded px-3 py-2 hover:bg-gray-100">
                     Hilfe & Prompt
                 </a>
 

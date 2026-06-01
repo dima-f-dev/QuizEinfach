@@ -1,2 +1,3 @@
-<h1 class="text-2xl font-bold text-slate-900 mb-4">404</h1>
-<p class="text-slate-600 leading-relaxed">Entschuldigung, die gewünschte Seite konnte nicht geladen werden.</p>
+<h1>Seite nicht gefunden</h1>
+<p class="text-slate-600">Entschuldigung, die gewünschte Seite konnte nicht geladen werden.</p>
+<p><a href="/" class="text-amber-600 underline hover:text-amber-700 cursor-pointer">ZUR STARTSEITE</a></p>
