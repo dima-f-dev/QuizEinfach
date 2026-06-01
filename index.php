@@ -3,16 +3,22 @@
 session_start();
 require 'config/db.php';
 
+// Meta-Daten und Seitenliste laden.
+$seo_data = require_once 'config/seo_config.php'; 
 
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
-$allowed_pages = ['home','quiz','create','faq','impressum','datenschutz','kontakt']; 
+// Schlüssel auslesen und daraus eine Liste der Seiten erstellen.
+$allowed_pages = array_keys($seo_data); 
 
-
+// Wenn die angeforderte Seite nicht in der Seitenliste enthalten ist, wird eine 404-Seite angezeigt.
 if (!in_array($page, $allowed_pages)) {
     header("HTTP/1.1 404 Not Found");
     $page = '404';
 }
+
+// Array mit den Daten der aktuellen Seite
+$currentPage = $seo_data[$page];
 
 ?>
 
@@ -21,9 +27,19 @@ if (!in_array($page, $allowed_pages)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, viewport-fit=cover">
-    <title>QuizEinfach</title>
+    <title><?= htmlspecialchars($currentPage['title']) ?></title>
     <link rel="stylesheet" href="/assets/css/output.css">
-    <meta name="robots" content="noindex">
+    <link rel="icon" href="favicon.ico" >
+
+    <!-- SEO-Block -->
+    <meta name="description" content="<?= $currentPage['description'] ?>">
+    <meta name="keywords" content="<?= $currentPage['keywords'] ?>">
+    <meta name="robots" content="index, follow, noodp">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<?= htmlspecialchars($currentPage['title']) ?>">
+    <meta property="og:description" content="<?= $currentPage['description'] ?>">
+
 </head>
 <body class="bg-slate-100">
     <header >
