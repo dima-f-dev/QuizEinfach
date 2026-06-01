@@ -5,102 +5,119 @@ const quizId = params.get("id");
 
 
 const datenText = localStorage.getItem("quizzes");
-const parsedObject2 = JSON.parse(datenText);
 
-const parsedObject = parsedObject2.find(quiz => quiz.quizId === quizId);
+// LocalStorage Prüfung
+if (!datenText) {
+    alert("LocalStorage ist leer!");
+    // Leitet den Nutzer automatisch auf die Seite des Generators weiter
+    window.location.href = "/?page=create";
+}
+else {
+      const parsedObject2 = JSON.parse(datenText);
+      const parsedObject = parsedObject2.find(quiz => quiz.quizId === quizId);
 
+      // Fehlermeldung, wenn das Quiz nicht gefunden wird. (undefined)
+      if (!parsedObject) {
+        const message = document.getElementById("message");
+        message.textContent = "Wählen Sie ein Quiz aus der Quizübersicht aus.";
+        message.classList.remove("hidden");
+        const titleElement = document.getElementById("quiz-title");
+        titleElement.textContent = "Fehler: Quiz nicht gefunden!";
+      } 
 
-// Quiz
-const titleElement = document.getElementById("quiz-title");
-titleElement.textContent = "Thema: "+parsedObject.quizTitle;
+      // Quiz
+      const titleElement = document.getElementById("quiz-title");
+      titleElement.textContent = "Thema: "+parsedObject.quizTitle;
 
-let currentIndex = 0; 
-let userAnswers = {}; // Antworten-Array
-let result = ""; // Ergebnis
+      let currentIndex = 0; 
+      let userAnswers = {}; // Antworten-Array
+      let result = ""; // Ergebnis
 
-const container = document.getElementById("question-container");
+      const container = document.getElementById("question-container");
 
-renderQuestion(currentIndex);
-
-function renderQuestion(index) {
-  container.innerHTML = ""; 
-
-  const q = parsedObject.questions[index];
-
-  const questionBlock = document.createElement("div");
-  questionBlock.classList.add("question");
-
-  const correctAnswersQ = q.correctAnswers.length;
-
-  // Frage
-  const questionTitle = document.createElement("h3");
-  questionTitle.textContent = q.question;
-  questionTitle.className = "text-xl font-semibold text-amber-800 mb-4";
-  questionBlock.appendChild(questionTitle);
-
-  // Info
-  const questionErford = document.createElement("div");
-  questionErford.textContent = correctAnswersQ > 1 ? "Es sind " + correctAnswersQ + " Antworten richtig." : "Es ist 1 Antwort richtig.";
-
-  questionErford.className = "text-sm font-medium text-slate-500 mb-4";
-  questionBlock.appendChild(questionErford);
-
-  // Antworten
-  const answersList = document.createElement("div");
-  answersList.className = "answers mb-4";
-
-  q.answers.forEach((answer, i) => {
-    const label = document.createElement("label");
-    label.className = "flex items-center gap-3 p-4 border border-slate-500 rounded-lg cursor-pointer hover:bg-gray-100 has-[:checked]:bg-amber-100 has-[:checked]:border-amber-500 mb-2";
-
-    const input = document.createElement("input");
-    input.type = correctAnswersQ > 1 ? "checkbox" : "radio";
-    input.name = q.id;
-    input.value = i;
-    input.className = "sr-only";
-
-    const span = document.createElement("span");
-    span.textContent = answer;
-
-    label.append(input, span);
-    answersList.appendChild(label);
-  });
-
-  questionBlock.appendChild(answersList);
-
-  // Weiter
-  const nextBtn = document.createElement("button");
-  nextBtn.textContent = index === parsedObject.questions.length - 1 ? "Fertig" : "Weiter";
-
-  nextBtn.className = "bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors cursor-pointer w-full w-auto";
-
-  nextBtn.addEventListener("click", () => {
-    if (currentIndex < parsedObject.questions.length - 1) {
-
-        currentAnswers = parsedObject.questions[currentIndex].correctAnswers;
-        console.log( "Korrekte Antworten = " + currentAnswers);
-
-        userAnswers = Array.from(document.querySelectorAll('input:checked')).map(input => Number(input.value));
-        console.log( "Benutzerantworten = " + userAnswers);
-
-        if (JSON.stringify(currentAnswers.sort()) === JSON.stringify(userAnswers.sort())) {
-            message.classList.add("hidden");
-        } 
-            else { 
-            const message = document.getElementById("message");
-            message.textContent = "Das war leider nicht richtig, aber versuch es nochmal 🙂.";
-            message.classList.remove("hidden");
-            return;
-            }
-
-      currentIndex++;
       renderQuestion(currentIndex);
-    } else {
-      container.innerHTML = "<div class='text-7xl animate-bounce'>🏆</div> <p class='text-slate-500 font-semibold'>Klasse! Quiz abgeschlossen</p>";
-    }
-  });
 
-  questionBlock.appendChild(nextBtn);
+      
+      function renderQuestion(index) {
+        container.innerHTML = ""; 
 
-  container.appendChild(questionBlock);
+        const q = parsedObject.questions[index];
+
+        const questionBlock = document.createElement("div");
+        questionBlock.classList.add("question");
+
+        const correctAnswersQ = q.correctAnswers.length;
+
+        // Frage
+        const questionTitle = document.createElement("h3");
+        questionTitle.textContent = q.question;
+        questionTitle.className = "text-xl font-semibold text-amber-800 mb-4";
+        questionBlock.appendChild(questionTitle);
+
+        // Info
+        const questionErford = document.createElement("div");
+        questionErford.textContent = correctAnswersQ > 1 ? "Es sind " + correctAnswersQ + " Antworten richtig." : "Es ist 1 Antwort richtig.";
+
+        questionErford.className = "text-sm font-medium text-slate-500 mb-4";
+        questionBlock.appendChild(questionErford);
+
+        // Antworten
+        const answersList = document.createElement("div");
+        answersList.className = "answers mb-4";
+
+        q.answers.forEach((answer, i) => {
+          const label = document.createElement("label");
+          label.className = "flex items-center gap-3 p-4 border border-slate-500 rounded-lg cursor-pointer hover:bg-gray-100 has-[:checked]:bg-amber-100 has-[:checked]:border-amber-500 mb-2";
+
+          const input = document.createElement("input");
+          input.type = correctAnswersQ > 1 ? "checkbox" : "radio";
+          input.name = q.id;
+          input.value = i;
+          input.className = "sr-only";
+
+          const span = document.createElement("span");
+          span.textContent = answer;
+
+          label.append(input, span);
+          answersList.appendChild(label);
+        });
+
+        questionBlock.appendChild(answersList);
+
+        // Weiter
+        const nextBtn = document.createElement("button");
+        nextBtn.textContent = index === parsedObject.questions.length - 1 ? "Fertig" : "Weiter";
+
+        nextBtn.className = "bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors cursor-pointer w-full w-auto";
+
+        nextBtn.addEventListener("click", () => {
+          if (currentIndex < parsedObject.questions.length - 1) {
+
+              currentAnswers = parsedObject.questions[currentIndex].correctAnswers;
+              console.log( "Korrekte Antworten = " + currentAnswers);
+
+              userAnswers = Array.from(document.querySelectorAll('input:checked')).map(input => Number(input.value));
+              console.log( "Benutzerantworten = " + userAnswers);
+
+              if (JSON.stringify(currentAnswers.sort()) === JSON.stringify(userAnswers.sort())) {
+                  message.classList.add("hidden");
+              } 
+                  else { 
+                  const message = document.getElementById("message");
+                  message.textContent = "Das war leider nicht richtig, aber versuch es nochmal 🙂.";
+                  message.classList.remove("hidden");
+                  return;
+                  }
+
+            currentIndex++;
+            renderQuestion(currentIndex);
+          } else {
+            container.innerHTML = "<div class='text-7xl animate-bounce'>🏆</div> <p class='text-slate-500 font-semibold'>Klasse! Quiz abgeschlossen</p>";
+          }
+        });
+
+        questionBlock.appendChild(nextBtn);
+
+        container.appendChild(questionBlock);
+      }
 }

@@ -11,7 +11,24 @@ menuButton.addEventListener('click', () => {
 function saveQuiz() {
 
   const textAusFeld = document.getElementById("json-input").value;
-  const neuesQuiz = JSON.parse(textAusFeld);
+
+  // textarea leer
+  if (!textAusFeld) {
+    alert("Bitte fügen Sie zuerst einen JSON-Code ein!");
+    return;
+  }
+
+  let neuesQuiz;
+
+  // JSON gültig 
+  try { 
+    neuesQuiz = JSON.parse(textAusFeld);
+  } catch (fehler) {
+    alert("Der eingegebene Text ist kein gültiges JSON-Format!");
+    console.error("JSON-Fehler:", fehler);
+    return; 
+  }
+
   const speicherText = localStorage.getItem("quizzes");
   
   let liste = speicherText ? JSON.parse(speicherText) : [];
