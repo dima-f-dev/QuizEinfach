@@ -82,3 +82,14 @@ function clearAllData() {
   alert("Der gesamte LocalStorage wurde geleert.");
   window.location.reload();
 }
+
+// QUIZ löschen
+function quizDelete(id) {
+    const quizzes = JSON.parse(localStorage.getItem("quizzes")) || [];
+    console.log(id);
+    const updated = quizzes.filter(
+      quiz => quiz.quizId !== id
+    );
+    localStorage.setItem("quizzes", JSON.stringify(updated));
+    window.location.reload();
+}

@@ -6,7 +6,5 @@
     Klicke auf <strong>"Quiz importieren"</strong>, um loszulegen, oder wähle ein fertiges Quiz aus der Liste. 
     Mehr Infos findest du im Bereich <strong>Hilfe & Prompt</strong>.
 </p>
-<p class="text-amber-800">
-Diese Website befindet sich derzeit in der Entwicklung. 
-</p>
+
 

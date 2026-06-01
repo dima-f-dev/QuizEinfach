@@ -34,10 +34,13 @@ else {
       let result = ""; // Ergebnis
 
       const container = document.getElementById("question-container");
-
+      const deleteBut = document.getElementById("quiz-delete");
+      deleteBut.innerHTML = `🗑️ <button type="button" onclick="quizDelete('${parsedObject.quizId}')" class="mt-6 text-sm text-gray-500 underline hover:text-amber-700 cursor-pointer" >
+        Dieses Quiz löschen</button>`;
+        
       renderQuestion(currentIndex);
 
-      
+
       function renderQuestion(index) {
         container.innerHTML = ""; 
 

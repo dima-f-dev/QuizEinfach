@@ -32,7 +32,7 @@ $currentPage = $seo_data[$page];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, viewport-fit=cover">
     <title><?= htmlspecialchars($currentPage['title']) ?></title>
-    <link rel="stylesheet" href="/assets/css/output.css">
+    <link rel="stylesheet" href="/assets/css/output.css?v=1">
     <link rel="icon" href="favicon.ico" >
 
     <!-- SEO-Block -->
