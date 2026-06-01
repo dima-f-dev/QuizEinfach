@@ -1,6 +1,10 @@
 <?php
 
 session_start();
+
+// ENV-Datei
+require 'config/env.php';
+loadEnv(__DIR__ . '/.env');
 require 'config/db.php';
 
 // Meta-Daten und Seitenliste laden.
