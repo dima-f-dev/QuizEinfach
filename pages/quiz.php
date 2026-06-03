@@ -5,4 +5,4 @@
     <div id="quiz-delete" class="text-right"></div>
 </div>
 
-<script src="/assets/js/quiz.js"> </script>
+<script src="/assets/js/quiz.js?v=1"> </script>

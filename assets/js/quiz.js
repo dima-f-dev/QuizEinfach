@@ -94,8 +94,6 @@ else {
         nextBtn.className = "bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors cursor-pointer w-full w-auto";
 
         nextBtn.addEventListener("click", () => {
-          if (currentIndex < parsedObject.questions.length - 1) {
-
               currentAnswers = parsedObject.questions[currentIndex].correctAnswers;
               console.log( "Korrekte Antworten = " + currentAnswers);
 
@@ -111,7 +109,8 @@ else {
                   message.classList.remove("hidden");
                   return;
                   }
-
+        // Prüfen, ob das Quiz abgeschlossen ist
+        if (currentIndex < parsedObject.questions.length - 1) {
             currentIndex++;
             renderQuestion(currentIndex);
           } else {
