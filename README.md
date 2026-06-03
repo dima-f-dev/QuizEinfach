@@ -2,23 +2,12 @@
 
 Eine modulare PHP-Webanwendung zur Erstellung und Durchführung von Online-Quizzes. Das Projekt nutzt ein modernes Frontend-Routing auf Basis von Komponenten und ist vollständig für die Containerisierung mit Docker vorbereitet.
 
-## Installationsanleitung (Lokales Setup)
+## Voraussetzungen
 
-Voraussetzungen
-
-* **PHP 8.x oder höher**
-* **Apache Webserver mit aktiviertem mod_rewrite**
-* **MySQL / MariaDB Datenbank**
-* **Node.js & npm (für Änderungen am CSS)**
-
----
-
-## Funktionen (Features)
-* **Quiz-System:** Dynamische Anzeige und Auswertung von Quiz-Inhalten (`quiz.php`).
-* **Benutzerverwaltung:** Sicheres Login- und Registrierungssystem für Nutzer (`login.php`).
-* **Erstellungs-Modus:** Integriertes Interface zum Anlegen neuer Quizzes (`create.php`).
-* **Responsive Design:** Modernes und mobiles Frontend basierend auf Tailwind CSS.
-* **Modulare Architektur:** Trennung von Konfigurationsdaten, Seitenelementen (Header/Footer/Sidebar) und Hauptseiten.
+* PHP 8.x oder höher
+* Apache Webserver mit aktiviertem mod_rewrite
+* MySQL / MariaDB Datenbank
+* Node.js & npm (für Änderungen am CSS)
 
 ---
 
@@ -47,9 +36,9 @@ Die Verzeichnisstruktur des Projekts ist wie folgt aufgebaut:
 │   ├── create.php           # Quiz erstellen
 │   ├── datenschutz.php      # Datenschutzerklärung
 │   ├── faq.php              # Häufig gestellte Fragen
-│   ├── home.php             # Startseite / Dashboard
+│   ├── home.php             # Startseite
 │   ├── impressum.php        # Impressum
-│   ├── kontakt.php          # Kontaktformular
+│   ├── kontakt.php          # Kontakt
 │   ├── login.php            # Benutzeranmeldung
 │   ├── quiz.php             # Quiz-Ansicht und Logik
 │   └── setting.php          # Benutzereinstellungen
@@ -62,3 +51,12 @@ Die Verzeichnisstruktur des Projekts ist wie folgt aufgebaut:
 ├── index.php                # Haupteinstiegspunkt (Router) der Anwendung
 ├── package-lock.json        # Exakte Versionssperre der npm-Pakete
 └── package.json             # Projektabhängigkeiten und Build-Skripte für Tailwind
+
+---
+
+## Funktionen (Features)
+* **Quiz-System:** Dynamische Anzeige und Auswertung von Quiz-Inhalten (`quiz.php`).
+* **Benutzerverwaltung:** Sicheres Login- und Registrierungssystem für Nutzer (`login.php`).
+* **Erstellungs-Modus:** Integriertes Interface zum Anlegen neuer Quizzes (`create.php`).
+* **Responsive Design:** Modernes und mobiles Frontend basierend auf Tailwind CSS.
+* **Modulare Architektur:** Trennung von Konfigurationsdaten, Seitenelementen (Header/Footer/Sidebar) und Hauptseiten.
