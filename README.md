@@ -51,6 +51,7 @@ Die Verzeichnisstruktur des Projekts ist wie folgt aufgebaut:
 ├── index.php                # Haupteinstiegspunkt (Router) der Anwendung
 ├── package-lock.json        # Exakte Versionssperre der npm-Pakete
 └── package.json             # Projektabhängigkeiten und Build-Skripte für Tailwind
+```
 
 ---
 
