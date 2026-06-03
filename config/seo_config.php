@@ -41,6 +41,16 @@ return [
         'description' => 'Haben Sie Fragen, Feedback zu unseren Quizzes oder Vorschläge für neue Themen? Nutzen Sie unser Kontaktformular, um uns zu erreichen.',
         'keywords'    => 'kontakt, support, feedback, fragen stellen, quiz vorschlagen, hilfe',
     ],
+    'login' => [
+        'title'       => 'Anmeldung',
+        'description' => '',
+        'keywords'    => '',
+    ],
+    'setting' => [
+        'title'       => 'Kontoeinstellungen',
+        'description' => '',
+        'keywords'    => '',
+    ],
     // Standardwerte
     'default' => [
         'title'       => 'Interaktive Quiz-Plattform',

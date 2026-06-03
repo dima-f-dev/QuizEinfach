@@ -37,7 +37,7 @@ function saveQuiz() {
 
   localStorage.setItem("quizzes", JSON.stringify(liste));
 
-  window.location.href = `/?page=quiz&id=${encodeURIComponent(neuesQuiz.quizId)}`;
+  window.location.href = `/quiz?id=${encodeURIComponent(neuesQuiz.quizId)}`;
 
 }
 
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded",() => {
 
       const link = document.createElement("a");
 
-      link.href = `/?page=quiz&id=${einzelnesQuiz.quizId}`;
+      link.href = `/quiz?id=${einzelnesQuiz.quizId}`;
       
       link.textContent = "❓ " + einzelnesQuiz.quizTitle;
       

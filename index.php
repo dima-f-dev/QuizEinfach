@@ -24,6 +24,36 @@ if (!in_array($page, $allowed_pages)) {
 // Array mit den Daten der aktuellen Seite
 $currentPage = $seo_data[$page];
 
+$error = '';
+
+// Prüfen, ob das Formular abgeschickt wurde
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
+
+    if (!empty($username) && !empty($password)) {
+        // Benutzer in der Datenbank suchen
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
+        $stmt->execute(['username' => $username]);
+        $user = $stmt->fetch();
+
+        // Prüfen, ob der Benutzer existiert und das Passwort korrekt ist
+        if ($user && password_verify($password, $user['password'])) {
+            // Benutzer-ID und Name in der Session speichern
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
+
+            // Weiterleitung zur geschützten Seite
+            header('Location: /setting');
+            exit;
+        } else {
+            $error = 'Benutzername oder Passwort falsch.';
+        }
+    } else {
+        $error = 'Bitte füllen Sie alle Felder aus.';
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
