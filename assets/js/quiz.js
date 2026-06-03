@@ -10,7 +10,7 @@ const datenText = localStorage.getItem("quizzes");
 if (!datenText) {
     alert("LocalStorage ist leer!");
     // Leitet den Nutzer automatisch auf die Seite des Generators weiter
-    window.location.href = "/?page=create";
+    window.location.href = "/create";
 }
 else {
       const parsedObject2 = JSON.parse(datenText);
