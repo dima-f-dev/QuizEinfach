@@ -55,7 +55,7 @@ Die Verzeichnisstruktur des Projekts ist wie folgt aufgebaut:
 
 ---
 
-## Funktionen (Features)
+## Funktionen
 * **Quiz-System:** Dynamische Anzeige und Auswertung von Quiz-Inhalten (`quiz.php`).
 * **Benutzerverwaltung:** Sicheres Login- und Registrierungssystem für Nutzer (`login.php`).
 * **Erstellungs-Modus:** Integriertes Interface zum Anlegen neuer Quizzes (`create.php`).
